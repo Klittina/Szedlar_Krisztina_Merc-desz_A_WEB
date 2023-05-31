@@ -45,4 +45,8 @@ class SzavakController extends Controller
         ->rightJoin('tema as t', 't.id','=','s.temaId');
         return $szavak;
     }
+
+    public function szavak(){
+        
+    }
 }

@@ -28,4 +28,4 @@ Route::delete('/szavak/{id}',[SzavakController::class,'destroy']);
 Route::get('/tema',[TemaController::class,'index']);
 Route::post('/tema',[TemaController::class,'store']);
 Route::put('/tema/{id}',[TemaController::class,'update']);
-Route::delete('/temak/{id}',[TemaController::class,'destroy']);
+Route::delete('/tema/{id}',[TemaController::class,'destroy']);

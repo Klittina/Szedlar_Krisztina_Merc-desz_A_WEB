@@ -13,11 +13,11 @@
 <body>
     <main>
         <header>Szavak</header>
-        <article>
+        <nav>
         <ul>
       <li id="nincsmas"><a href="#">Publikus</a></li>
-  </ul>
-        </article>
+  </ul></nav>
+        <article></article>
         <footer>Szedlár Krisztina Mercédesz Vizsgamunka</footer>
     </main>
 </body>

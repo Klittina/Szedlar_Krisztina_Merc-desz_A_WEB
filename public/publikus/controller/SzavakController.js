@@ -1,22 +1,21 @@
 import SzavakModel from '../model/SzavakModel.js';
-import Szavak from '../view/SzavakView.js';
+import SzavakView from '../view/SzavakView.js';
 
 class SzavakController{
-    #szavakController;
+    #szavakmodel;
     #token;
     constructor(){
         const token = $('meta[name="csrf-token"]').attr("content");
         this.#token = token;
-        this.vegpont="/api/szavak";
-        console.log(this.vegpont)
-        $(window).on("click",() => {
-            SzavakModel.adatBe(this.vegpont,this.MegtekintEsemeny);
+        this.#szavakmodel = new SzavakModel(token);
+        $("#nincsmas").on("click",() => {
+            this.#szavakmodel.adatBe(("/szavak"),this.MegtekintEsemeny);
         })
     }
 
     MegtekintEsemeny(tomb){
-        const szuloElem=$("article");
-        new Szavak(tomb,szuloElem);
+        new SzavakView(tomb,$("article"));
+        console.log(tomb)
     }
 }
 export default SzavakController;

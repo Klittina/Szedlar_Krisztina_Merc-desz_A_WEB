@@ -1,11 +1,16 @@
-import Szo from '../view/SzoView.js'
+import SzoView from '../view/SzoView.js';
+console.log("ciklus nem")
 
-class Szavak{
+class SzavakView{
     contructor(tomb, szuloElem){
-        szuloElem.html(`<div class = "szavak"></div>`);
+        console.log(tomb)
+        szuloElem.html(`<div class = "szavak">legördülő menű helye</div>`);
         this.divElem = szuloElem.children("div:last-child");
-console.log("szavak.view")
-        let szavak = new Szo(tomb, this.divElem);
+        
+        console.log("ciklus")
+        tomb.forEach(element => {
+            const szok = new SzoView(element,this.divElem);
+        });
     }
 }
-export default Szavak;
+export default SzavakView;
