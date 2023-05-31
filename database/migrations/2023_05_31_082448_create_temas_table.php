@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Tema;
 
 return new class extends Migration
 {
@@ -16,7 +17,8 @@ return new class extends Migration
             $table->string('temanev');
             $table->timestamps();
         });
-
+        Tema::create(['id'=>'1','temanev'=>'Melléknév']);
+        Tema::create(['id'=>'2','temanev'=>'Főnév']);
     }
 
     /**
